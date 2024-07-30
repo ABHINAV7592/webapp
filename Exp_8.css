@@ -1,0 +1,28 @@
+.boxes{
+    border: 3px solid lightgrey;
+}
+.box1{
+    width:5rem;
+    height: 5rem;
+    background-color: red;
+}
+.box2{
+    width:5rem;
+    height: 5rem;
+    background-color: green;
+    /* position: relative;
+    left: -4rem; */
+    /*top: 2rem; */
+    /* float: right; */
+    position:fixed;
+}
+.box3{
+    width:5rem;
+    height: 5rem;
+    background-color: blue;
+    /* position: relative;
+    bottom: 8rem; */
+}
+body{
+    height:150vh;
+}

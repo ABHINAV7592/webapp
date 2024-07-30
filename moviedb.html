@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 20px;
+        width: 400px;
+    }
+
+    #moviedb {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .movie {
+        list-style: none;
+        background-attachment: #fff;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .delete {
+            cursor: pointer
+            color: #cc0000;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        #moviename {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        #addMovieBtn {
+            padding: 8px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+</style>
+</head>
+<body>
+    <a href="http://www.imdb.com" id="moviedb">Movie DB</a>
+    <ul>
+        <li class="movie">
+            <span class="title">Lucifer</span>
+            <span class="title">Delete</span>
+        </li>
+        <li class="movie">
+            <span class="title">Rorschach</span>
+            <span class="title">Delete</span>
+        </li>
+        <li class="movie">
+            <span class="title">Kooman</span>
+            <span class="title">Delete</span>
+        </li>
+        <li class="movie">
+            <span class="title">kanthara</span>
+            <span class="title">Delete</span>
+        </li>
+    </ul>
+    <form>
+        <input type="text" id="moviename" placeholder="enter movie name">
+        <button type="submit" id="addMovieBtn">Add movie</button>
+    </form>
+    <script>
+        const moviedbLink = document.getElementById('moviedb');
+        console.log(moviedbLink);
+
+        const movieElements = document.querySelectorAll('.movie');
+        console.log(movieElements);
+
+        movieElements.forEach(movie => console.log(movie.textContent));
+        const secondMovie = document.querySelector('.movie:nth-child(2)');
+        console.log(secondMovie);
+
+        const oddPositionMovies = document.querySelectorAll('.movie:nth-child(odd)');
+        console.log(oddPositionMovies);
+
+        movieElements.forEach(movie => console.log(movie.querySelector('.title').textContent));
+
+        movieElements.forEach(movie => movie.querySelector('.title').textContent += '(new)');
+
+        const unorderedList = document.querySelector('ul');
+        unorderedList.innerHTML = '<p>NO new movies</p>';
+
+        const parentOfUnorderedList = unorderedList.parentElement;
+        console.log(moviedbLink.href);
+
+        moviedbLink.removeAttribute('href');
+
+        const newMovieElement = document.createElement('li');
+        newMovieElement.className = 'movie';
+        newMovieElement.innerHTML = '<span class="title">Jana Gana Mana</span> <span class="delete">delete</span>';
+        document.querySelector('ul').appendChild(newMovieElement);
+
+        const deleteButtons = document.querySelectorAll('.delete');
+        deleteButtons.forEach(button => {
+           button.style.cursor = 'pointer';
+           button.style.color = '#cc0000';
+        });
+        
+        const naThanCaseKodu = document.querySelector('.title:conatains("nna Than case Kodu)');
+        if (nnaThanCaseKodu) {
+            nnaThanCaseKodu.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

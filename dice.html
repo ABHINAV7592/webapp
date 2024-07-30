@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 1000vh;
+            margin: 0;
+            font-family:Arial,  sans-serif;
+        }
+
+        #player1, #player2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #ressult {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    <h2 id="player1">player 1:1</h2>
+    <img id="dice1" src="dice1.jpg.png" alt="dice1">
+    <h2 id="player2">player 2:1</h2>
+    <img id="dice1" src="dice2.jpg.png" alt="dice2">
+    <button id="rollbutton">Roll dice</button>
+    <p id="result"></p>
+        <script>
+            const player1Element = document.getElementById('player1');
+            const dice1Element = document.getElementById('dice1');
+            const player2Element = document.getElementById('plyer2');
+            const dice2element = document.getElementById('dice2');
+            const rollbutton = document.getElementById('rollbuttton');
+            const resultElement = document.getElementById('result');
+            rollbutton.addEventListener('click',function() {
+                const player1Roll = Math.floor(Math,random() * 6)+1;
+                const player2Roll = Math.floor(Math.random() *6)+1;
+                dice1Element.src = 'dice${player1Roll}.png';
+                dice2Element.src = 'dice2${player2Roll}.png';
+                player1Element.textContent = 'player 1: ${player1Roll}';
+                player2Element.textContent = 'player2: ${player2Roll}';
+                let winner;
+                if(player1Roll > player2Roll) {
+                    winner = 'player 1 wins';
+                }else if(player1Roll < player1Roll) {
+                        winner = 'player 2 wins';
+                    }else {
+                            winner = 'it\is a tie';
+                        }
+                        resultElement.textContent = winner;
+            });
+
+        </script>
+</body>
+</html>
